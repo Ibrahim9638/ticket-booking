@@ -3,10 +3,21 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import LoginForm from "./components/LoginForm/LoginForm";
 import SideCart from "./components/SideCart/SideCart";
+import { useState } from "react";
 
 function App() {
-  const handleWatchTime = (watchTime)=>{
-    console.log(watchTime)
+  const [watchTime, setWatchTime] = useState("");
+
+  const handleWatchTime = (time)=>{
+    const previousWatchTime = JSON.parse(localStorage.getItem("watchTime"));
+    if(previousWatchTime){
+      const sum = previousWatchTime + time;
+      localStorage.setItem("watchTime", sum)
+      setWatchTime(sum)
+    }else{
+      localStorage.setItem("watchTime", time);
+      setWatchTime(time);
+    }
   }
   return (
     <div className="max-w-7xl mx-auto">
@@ -16,7 +27,7 @@ function App() {
           <Home handleWatchTime={handleWatchTime} />
         </div>
         <div>
-          <SideCart />
+          <SideCart watchTime={watchTime} />
         </div>
       </div>
 
