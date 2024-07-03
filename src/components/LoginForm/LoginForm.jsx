@@ -3,9 +3,9 @@ import login from "../../assets/login.png";
 
 const LoginForm = () => {
   return (
-    <div className="grid md:grid-cols-3 gap-4">
+    <div className="grid md:grid-cols-3 gap-4 mt-5 mb-5">
       <div className="col-span-2 ">
-        <h2 className="mt-4 mb-4 text-center text-3xl font-bold">Please Login here</h2>
+        <h2 className="mt-4 mb-4 text-center text-3xl font-bold">Please Login</h2>
         <div>
         <b>Name:</b> <input
             type="text"

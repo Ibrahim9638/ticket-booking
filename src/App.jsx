@@ -4,6 +4,9 @@ import Home from "./components/Home/Home";
 import LoginForm from "./components/LoginForm/LoginForm";
 import SideCart from "./components/SideCart/SideCart";
 import { useState } from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const [watchTime, setWatchTime] = useState("");
@@ -30,8 +33,8 @@ function App() {
           <SideCart watchTime={watchTime} />
         </div>
       </div>
-
       <LoginForm />
+      <ToastContainer />
     </div>
   );
 }
